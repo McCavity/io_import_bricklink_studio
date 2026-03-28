@@ -85,6 +85,18 @@ Expected colors in the Galaxy Explorer:
 | 19 | Trans-Yellow (cockpit windows) |
 | 20 | Trans-Green (navigation lights) |
 
+## Diagnostic Tool
+
+`debug_material_report.py` — run in Blender's Scripting tab.
+- If objects are selected: reports only those objects
+- If nothing is selected: reports all `LDraw_*` objects in the scene
+- Prints BL color ID, Base Color (RGBA + hex approximation), Alpha, Roughness,
+  Transmission, IOR, surface_render_method, blend_method, use_backface_culling
+- Used by community members to generate standardized bug reports for color issues
+
+When reviewing a color issue, ask the reporter to run this script and paste the output.
+The `BL Color ID` in the report maps directly to a key in `LDRAW_COLORS`.
+
 ## Known Issues / Future Work
 
 - Vertex deduplication not implemented (affects mesh quality / normal smoothing)

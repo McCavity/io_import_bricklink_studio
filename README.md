@@ -119,9 +119,61 @@ BrickLink Studio uses **BrickLink color IDs** in `model2.ldr`, which are complet
 
 This is the root cause of incorrect colors when using LDraw-based color tables with `.io` files.
 
+## Reporting a Color Problem
+
+If a part renders with the wrong color, please use the included diagnostic script
+to generate a standardized report before opening an issue.
+
+### Step 1 — Run the diagnostic script
+
+1. Import your `.io` file as usual
+2. **Optional:** Select the incorrectly colored object(s) in the viewport
+   (if nothing is selected, all LDraw objects are reported)
+3. Open the **Scripting** workspace in Blender
+4. Click **Open** and select `debug_material_report.py`, then click **Run Script**
+5. Open the **Blender System Console**
+   - Windows: *Window → Toggle System Console*
+   - macOS/Linux: start Blender from the terminal to see console output
+
+### Step 2 — Copy the output
+
+The script prints a report like this:
+
+```
+======================================================================
+  BrickLink Studio Importer — Material Diagnostic Report
+======================================================================
+  Blender:    5.0.0
+  Renderer:   CYCLES
+  Color Mgmt: view_transform='Standard'  exposure=0.00  gamma=1.00
+  Scope:      1 selected object(s)
+======================================================================
+
+  Object:       LDraw_102
+  Material:     LDraw_Color_102
+  BL Color ID:  102  (opaque)
+  Base Color:   (0.722, 0.722, 0.722, 1.000)  ≈ #B8B8B8
+  Alpha:        1.0
+  Roughness:    0.25
+  ...
+```
+
+### Step 3 — Open a GitHub issue
+
+Please include in your report:
+- The full console output from the script
+- The **BrickLink Color ID** and the expected color name (e.g. *"Medium Azure"*)
+- The **LEGO set number** where this color appears
+- A screenshot if possible
+
+→ [Open an issue](https://github.com/McCavity/io_import_bricklink_studio/issues/new)
+
 ## Contributing
 
-Issues and pull requests welcome! If you have empirically verified a color on a specific LEGO set, please open an issue with the BrickLink color ID and your Blender linear RGB values — especially for post-2003 colors.
+Issues and pull requests are welcome! Empirically verified color corrections
+(tested on a real LEGO set) are especially valuable — please include the set number
+and the BrickLink color ID so the fix can be marked as `✓ verified empirically`
+in the color table.
 
 ## License
 
