@@ -107,13 +107,15 @@ The `BL Color ID` in the report maps directly to a key in `LDRAW_COLORS`.
 
 ## Organisation Context
 
-This repository is part of Henning Halfpap's personal GitHub collection, located at
-`/Users/hhalfpap/git/projects/own` on the development machine.
+This repository is one of several personal repos that sit side by side in a single
+parent directory on the development machine. That parent directory is itself a git
+repo and carries the cross-repo tooling. Paths below are relative to this repo, so
+they hold wherever the collection is checked out.
 
-- **Org index**: `/Users/hhalfpap/git/projects/own/org-index.json` — machine-readable
-  metadata for all repos (last commit, CLAUDE.md presence, file count, etc.)
-- **Org instructions**: `/Users/hhalfpap/git/projects/own/CLAUDE.md` — guidance for
-  cross-repo maintenance tasks (checking sync status, stale repos, etc.)
+- **Org index**: `../org-index.json` — machine-readable metadata for all repos
+  (last commit, CLAUDE.md presence, file count, etc.)
+- **Org instructions**: `../CLAUDE.md` — guidance for cross-repo maintenance
+  tasks (checking sync status, stale repos, etc.)
 
 For project-specific work, operate within this directory. For questions spanning
 multiple repos, consult the org index first.
